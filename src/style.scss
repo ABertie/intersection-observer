@@ -1,3 +1,61 @@
-body {
-	color: green;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+$shadow: .15em .15em .3em rgba(33, 33, 33, 0.33);
+$brand: darkseagreen;
+$text: midnightblue;
+
+body{
+	font-size: 1.5vh;
+	font-weight: 600;
+	font-family: sans-serif;
+	margin: 2em;
+	color: $text;
+}
+
+form {
+	margin: 1em 0;
+	font-size: 1.25em;
+	font-style: italic;
+
+	.name {
+		text-transform: capitalize;
+	}
+
+	button, input {
+		padding: .25em 1em;
+		border: none;
+		background-color: $brand;
+		border-radius: .5em;
+		box-shadow: $shadow;
+	}
+
+	input{
+		background-color: rgba($brand, .5);
+	}
+}
+
+ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .5em;
+
+	li {
+		background-color: $brand;
+		border-radius: 1em;
+		list-style: none;
+		text-align: center;
+		text-transform: capitalize;
+		padding: 1em;
+		box-shadow: $shadow;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+
