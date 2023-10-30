@@ -4,16 +4,28 @@
 	box-sizing: border-box;
 }
 
-$shadow: .15em .15em .3em rgba(33, 33, 33, 0.33);
-$brand: darkseagreen;
-$text: midnightblue;
+.light{
+	--shadow: .15em .15em .3em rgba(33, 33, 33, 0.33);
+	--brand: darkseagreen;
+	--text: midnightblue;
+	--background: white;
+}
+
+.dark{
+	--shadow: .15em .15em .3em rgba(33, 33, 33, 0.33);
+	--brand: darkblue;
+	--text: white;
+	--background: midnightblue;
+}
+
 
 body{
 	font-size: 1.5vh;
 	font-weight: 600;
 	font-family: sans-serif;
 	margin: 2em;
-	color: $text;
+	color: var(--text);
+	background-color: var(--background);
 }
 
 form {
@@ -28,13 +40,41 @@ form {
 	button, input {
 		padding: .25em 1em;
 		border: none;
-		background-color: $brand;
+		background-color: var(--brand);
 		border-radius: .5em;
-		box-shadow: $shadow;
+		box-shadow: var(--shadow);
+		color: inherit;
 	}
 
 	input{
-		background-color: rgba($brand, .5);
+		background-color: rgba(var(--brand), .5);
+	}
+}
+
+button {
+	border: none;
+	background-color: var(--text);
+	box-shadow: var(--shadow);
+	border-radius: .5em;
+	padding: .25em 1em;
+	color: var(--background);
+}
+
+.todoForm{
+
+	ul {
+		display: block;
+		
+		li {
+			text-align: start;
+			background-color: transparent;
+			box-shadow: none;
+			padding: .25em;
+
+			input, p{
+				display: inline;
+			}
+		}
 	}
 }
 
@@ -44,13 +84,13 @@ ul {
 	gap: .5em;
 
 	li {
-		background-color: $brand;
+		background-color: var(--brand);
 		border-radius: 1em;
 		list-style: none;
 		text-align: center;
 		text-transform: capitalize;
 		padding: 1em;
-		box-shadow: $shadow;
+		box-shadow: var(--shadow);
 
 		img {
 			width: 100%;
